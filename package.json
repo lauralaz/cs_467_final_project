@@ -1,0 +1,28 @@
+{
+  "name": "cs_467_final_project",
+  "version": "1.0.0",
+  "description": "employee_awards",
+  "main": "dbui.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "dateformat": "^1.0.12",
+    "express": "^4.15.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.13.0",
+    "package.json": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lauralaz/cs_467_final_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lauralaz/cs_467_final_project/issues"
+  },
+  "homepage": "https://github.com/lauralaz/cs_467_final_project#readme"
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="cs_467_final_project.css" type="text/css">
+</head>
+<body>
+	<h3 class="headerClass">Employee Recognition Users</h3>
+	<div class="exerciseForm">
+	<table id="userTable">
+		<caption>Current Users</caption>
+		<thead>
+		<tr>
+		<th>User Name<br></th>
+		<th>Email Address</th>
+		<th>Signature</th>
+		<th>Date</th>
+		<th></th>
+		<th></th>
+		</tr>
+		</thead>
+		<tbody>
+			 {{#each rows}} 
+			 <tr>
+			 	<td> {{name}}</td>
+			 	<td> {{email}}</td>
+			 	<td> {{sig_link}}</td>
+			 	<td> {{created}}</td>
+			 	</td>
+			 	<td>
+			 		<form><input type="hidden" name="id" value={{id}}><button class="editButtonClass">Edit Row</button></form>
+			 	</td>
+			 	<td><form><input type="hidden" name="id" value={{id}}><button class="deleteButtonClass">Delete Row</button></form></td>	
+			 </tr>
+			 {{/each}}
+		</tbody>
+	</table>	
+	<form action="" method="post" id="userEntryForm">
+		Create New User:<br><p></p>
+		Insert User Name:<br>
+		<input type="text" name="Name" id="userName"><br><p></p>
+		Insert User Email Address:<br>
+		<input type="text" name="Email Address" id="userEmailAddress"><br><p></p>
+		Password:<br>
+		<input type="password" name="Password" id="userPassword" placeholder="Welcome2017!"> <br><p></p>
+		Upload User Signature (provided as jpg by user):<br>
+		<input type="text" name="Signature Image" id="userSignature"><br><p></p>
+		Date Created:<br>
+		<input type="date" name="Date" id="date" placeholder="MM/DD/YYYY"><br><p></p>
+		<input type="submit" value="Add New User" id="postFormSubmit">
+	</form><br>
+	</div>
+	<div class="adminUserForm">
+		<table id="adminUserTable">
+		<caption>Current Admin Users</caption>
+		<thead>
+		<tr>
+		<th>Admin User Name<br></th>
+		<th>Email Address</th>
+		<th>Date Created</th>
+		<th></th>
+		<th></th>
+		</tr>
+		</thead>
+		<tbody>
+			 {{#each rows}} 
+			 <tr>
+			 	<td> {{name}}</td>
+			 	<td> {{email}}</td>
+			 	<td> {{created}}</td>
+			 	</td>
+			 	<td>
+			 		<form><input type="hidden" name="id" value={{id}}><button class="editButtonClass">Edit Row</button></form>
+			 	</td>
+			 	<td><form><input type="hidden" name="id" value={{id}}><button class="deleteButtonClass">Delete Row</button></form></td>	
+			 </tr>
+			 {{/each}}
+		</tbody>
+	</table>
+		<form action="" method="post" id="adminUserEntryForm">
+		Create New Admin User:<br><p></p>
+		Insert Admin User Name:<br>
+		<input type="text" name="Name" id="userName"><br><p></p>
+		Insert Admin User Email Address:<br>
+		<input type="text" name="Email Address" id="userEmailAddress"><br><p></p>
+		Date Created:<br>
+		<input type="date" name="Date" id="date" placeholder="MM/DD/YYYY"><br><p></p>
+		<input type="submit" value="Add New User" id="postFormSubmit">
+	</form><br>
+	</div>
+	<script src="ajaxFormSubmit.js"></script>	
+</body>
+</html>
