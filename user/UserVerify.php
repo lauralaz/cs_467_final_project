@@ -17,6 +17,10 @@
 						<input type="submit" name="submit" value="Verify" />
 					</fieldset>
 				</form>
+				<br>
+				<form class=firstrow method="post" action="UserLogin.php">
+						<input type="Submit" name="login" value="Back" />
+				</form>
 			</div>
 		</body>
 	</html>
