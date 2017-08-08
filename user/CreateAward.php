@@ -25,7 +25,7 @@ if(!empty($_POST))
         $valid = false;
     }
      
-    if (!checkdate ($_POST["day"],$_POST["month"],$_POST["year"])) {
+    if (!checkdate ($_POST["month"],$_POST["day"],$_POST["year"])) {
         $error = $error.'Please enter the date.<br/>';
         $valid = false;
     }else {
@@ -41,7 +41,7 @@ if(!empty($_POST))
 		$data = $q->fetch(PDO::FETCH_ASSOC);
 		$awardType = $data["type_id"];
 
-		$sql = "INSERT INTO `zhaojing-db`.`awards` (`awards_type`, `owner`, `owner_name`, `who_created`, `creation_time`) VALUES (?,?,?,?,?)";
+		$sql = "INSERT INTO `awards` (`awards_type`, `owner`, `owner_name`, `who_created`, `creation_time`) VALUES (?,?,?,?,?)";
 		$q = $pdo->prepare($sql);
 		$q->execute(array($awardType,$username,$name,$_COOKIE["email"],$date));
 		Database::disconnect();

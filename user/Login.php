@@ -35,7 +35,7 @@
 			  header("Location: UserNewAccountLogin.php");
 			} else {
 				setcookie( "welcome","", time()- 60, "/","", 0);
-				setcookie("email", $email, time()+3600, "/","", 0);
+				setcookie("email", $email, time()+31536000, "/","", 0);
 				header("Location: UserAccount.php");
 			}
 			Database::disconnect();

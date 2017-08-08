@@ -1,10 +1,10 @@
 <?php
 class Database
 {
-    private static $dbName = 'zhaojing-db' ;
-    private static $dbHost = 'oniddb.cws.oregonstate.edu' ;
-    private static $dbUsername = 'zhaojing-db';
-    private static $dbUserPassword = 'sbIDxOgerb8JEOiT';
+    private static $dbName = 'cs_467' ;
+    private static $dbHost = 'mysqldb.ctktrxaj5nit.us-west-2.rds.amazonaws.com' ;
+    private static $dbUsername = 'cs467';
+    private static $dbUserPassword = 'August2017';
      
     private static $cont  = null;
      

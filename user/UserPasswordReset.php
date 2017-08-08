@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
      
     require 'database.php';
  
@@ -48,16 +51,19 @@
 
 <!DOCTYPE html>
 	<html lang="en">
-		<head>
+				<head>
+			<link rel="stylesheet"type="text/css" href="cs_467_final_project.css">
+			<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Vollkorn"/>
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 			<meta charset="UTF-8">
-			<title>DRACO AWARDS Password Reset</title>
-			<link rel="stylesheet" href="TableStyle.css" type="text/css">
+			<title>Password Reset</title>
 		</head>
 		<body>
-			<h1 align="center">DRACO AWARDS</h1>
-			<h2 align="center">Password Reset</h2>
+			<h1>Employee Awards User Site</h1>
+			<img src="http://34.212.188.210:3000/cartoon_guy_trophy.jpg" class="img">
+			<h3 class="headerClass">Password Reset</h3>
 			<div>
-				<form class=firstrow method="post" action="ResetPassword.php">
+				<form class="userForm" method="post" action="ResetPassword.php">
 					<fieldset>
 						<legend>Reset Password</legend>
 							<p>Enter New Password: <input type="password" name="password" /></p>
