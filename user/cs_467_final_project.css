@@ -43,6 +43,7 @@ td {
 
 .btn {
 	font: bold 11px Arial;
+	font-family: Vollkorn !important;
 	text-decoration: none;
 	background-color: #EEEEEE;
 	color: #333333;
