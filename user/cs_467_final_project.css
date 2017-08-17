@@ -1,0 +1,66 @@
+/*reference:  To make the admin and user sites consistent in 
+			  appearance, the contents of this CSS is mostly 
+			  a copy and paste of Laura's code, with a few of
+			  my own modifications to integrate them with a
+			  working PHP code*/
+
+body{
+	color: #550055 !important;
+	font-family: Vollkorn !important;
+}
+
+.headerClass{
+	margin-left:35%;
+}
+
+td {
+	border: 2px solid black;
+}
+
+.selected {
+	border: 10px solid purple;
+}
+
+.yellow{
+	background-color: yellow;
+}
+
+.userForm{
+	margin-left: 35%;
+	margin-right: 35%;
+}
+
+.center{
+    margin-left:auto; 
+    margin-right:auto;
+  }
+  
+.img{
+	display: block;
+	margin: 0 auto;
+	clear: right;
+}
+
+.btn {
+	font: bold 11px Arial;
+	font-family: Vollkorn !important;
+	text-decoration: none;
+	background-color: #EEEEEE;
+	color: #333333;
+	padding: 2px 6px 2px 6px;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #333333;
+	border-bottom: 1px solid #333333;
+	border-left: 1px solid #CCCCCC;
+}
+
+fieldset{
+	border: none;
+}
+
+h1{
+	color: #655499 !important;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+}
