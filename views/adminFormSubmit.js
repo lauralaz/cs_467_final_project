@@ -6,21 +6,20 @@ function bindAjax() {
 		console.log("editButtonClickEvent");
 		var id = event.target.previousSibling.value;
 		event.preventDefault();
-		window.location = "/edit/users/"+id;
-
+		window.location = "/edit/admin/"+id;
 	}
 
 	var deleteButtonClickEvent = function(event){
 
 		var req = new XMLHttpRequest();
-		var email = event.target.previousSibling.value;
-		req.open('DELETE', '/delete/'+email, true);
+		var id = event.target.previousSibling.value;
+		req.open('DELETE', '/delete_admin/'+id, true);
 		event.preventDefault();
 		var id = event.target.previousSibling.value;
 		req.addEventListener('load',function(){
 			if(req.status==200){
 				var deleteIndex = event.target.parentNode.parentNode.parentNode.rowIndex;
-				document.getElementById("userTable").deleteRow(deleteIndex);
+				document.getElementById("adminUserTable").deleteRow(deleteIndex);
 			}
 
 		})

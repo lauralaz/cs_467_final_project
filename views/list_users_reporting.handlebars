@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="cs_467_final_project.css" type="text/css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable);
+
+      function drawTable() {
+      	var results = '{{{results}}}';
+      	var rows = JSON.parse(results);
+
+
+        var data = new google.visualization.DataTable();
+        //data.addColumn('number', 'id');
+        data.addColumn('string', 'First Name');
+        data.addColumn('string', 'Last Name');
+        data.addColumn('string', 'Email');
+        data.addColumn('string', 'Photo');
+        data.addColumn('string', 'Security Word');
+        data.addColumn('string', 'Date');
+
+        for (var i = 0; i < rows.length; i++) {
+        	var row = rows[i];
+        	data.addRow([row.user_name, row.user_last_name, row.email, row.photo, row.security_word, row.registration_time]);
+        	//data.addRow([row.user_name, row.user_last_name, row.email, row.photo, row.security_word, row.registration_time ]);
+        	//data.addRow([row.userFirstName, row.userLastName, row.userEmail, row.userPhotoSubmission, row.userSecurityWord, row.date ]);
+        }
+        
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+
+        table.draw(data, {showRowNumber: true, width: '80%', height: '100%'});
+      }
+    </script>
+</head>
+<body>
+	<div id="chart_div"></div>
+	<div id="table_div" style="width: 80%; height: 200px; position: relative; left: 20%;">
+		
+	</div>
+</body>
+</html>

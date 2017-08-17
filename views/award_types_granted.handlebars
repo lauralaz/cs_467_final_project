@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="cs_467_final_project.css" type="text/css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+      var results = JSON.parse('{{{results}}}');
+  
+      var data = new google.visualization.DataTable();
+      data.addColumn("string", "AwardType");
+      data.addColumn("number", "Times Granted");
+      for(var i =0; i<results.length; i++) {
+        var row = [results[i].award_name, results[i].num_awards];
+        data.addRows([row]);
+      }
+        var options = {
+          title: 'Awards Granted By Type'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+</head>
+<body>
+	<h3 class="headerClass">Employee Recognition Users</h3>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <div id="piechart"></div>
+      
+</body>
+</html>

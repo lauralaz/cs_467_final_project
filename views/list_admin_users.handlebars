@@ -1,0 +1,31 @@
+
+<h3 class="headerClass">Employee Recognition Admin Users</h3>
+<div class="adminUserForm">
+	<table id="adminUserTable">
+		<caption>Current Admin Users</caption>
+		<thead>
+		<tr>
+			<th>User Name<br></th>
+			<th>Email Address</th>
+			<th>Date</th>
+			<th></th>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+			 {{#each rows}} 
+			 <tr>
+			 	<td> {{name}}</td>
+			 	<td> {{email}}</td>
+			 	<td> {{created}}</td>
+			 	<td>
+			 		<form><input type="hidden" name="id" value={{email}}><button class="editButtonClass">Edit Row</button></form>
+			 	</td>
+			 	<td><form><input type="hidden" name="id" value={{email}}><button class="deleteButtonClass">Delete Row</button></form></td>	
+			 </tr>
+			 {{/each}}
+		</tbody>
+	</table>	
+</div>
+
+	<script src="adminFormSubmit.js"></script>	

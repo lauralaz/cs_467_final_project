@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet"type="text/css" href="cs_467_final_project.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Vollkorn"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <meta charset="UTF-8">
+
+	<title>Employee Recognition Awards Reporting</title>
+</head>
+<div class=homeButton>	
+ <form id="Home" action='home'>
+        </form>
+        <button form="Home" type="submit" class="glyphicon glyphicon-home homeButton">
+        </button>
+</div> 
+<div class="headerBlock">
+	<form action="/logout" method="POST" id="logout"><button style="float: right;margin-right: 2%;">Logout</button></form>
+	<h1>{{pageTitle}}</h1>
+ </div>
+<body>
+	{{{body}}}
+	<div class="previousAndNext">
+		{{#if previousLinkLocation}}
+			<a href="{{previousLinkLocation}}" class="btn btn-default btn-lg">Previous</a>
+		{{/if}}
+		{{#if nextLinkLocation}}
+			<a href="{{nextLinkLocation}}" class="btn btn-default btn-lg">Next</a>
+		{{/if}}
+	</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>	
+</body>
+</html>

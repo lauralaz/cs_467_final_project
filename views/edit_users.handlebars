@@ -1,0 +1,16 @@
+	<form action="/update/{{row.email}}" method="post" id="">
+		Edit First Name:<br>
+		<input type="text" name="user_name" id="userName" value={{row.user_name}}><br><p></p>
+		Edit Last Name:<br>
+		<input type="text" name="user_last_name" id="userName" value={{row.user_last_name}}><br><p></p>
+
+		Edit Email:<br>
+		<input type="text" name="email" id="userEmailAddress" value={{row.email}}><br><p></p>
+		Edit Security Word:<br>
+		<input type="text" name="security_word" id="userPassword" value={{row.security_word}}><br><p></p>
+
+		Edit Password:<br>
+		<input type="text" name="password" id="userPassword" value={{row.password}}><br><p></p>
+		<input type="submit" value="Update Values" id="postFormSubmit">
+
+	</form><br>

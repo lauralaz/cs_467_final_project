@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="cs_467_final_project.css" type="text/css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+	var results = JSON.parse('{{{results}}}');
+	var awardTypes = JSON.parse('{{{awardTypes}}}');
+	var keys = Object.keys(results);
+	var data = new google.visualization.DataTable();
+	data.addColumn("string", "User");
+	for (var i =0; i<awardTypes.length; i++) {
+		data.addColumn("number", awardTypes[i]);
+
+	}
+
+	for(var i =0; i<keys.length; i++) {
+		var row = [keys[i]];
+		for (var x = 0; x < results[keys[i]].length; x++) {
+			row.push(results[keys[i]][x].count);
+		}
+		data.addRows([row]);
+	}
+
+      var options = {
+        title: 'Number of Awards Per User',
+        chartArea: {width: '80%'},
+        hAxis: {
+          title: 'Number of Awards'
+        },
+        vAxis: {
+          title: 'User'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+</head>
+<body>
+	<h3 class="headerClass">Employee Recognition Users</h3>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <div id="chart_div"></div>
+      
+</body>
+</html>

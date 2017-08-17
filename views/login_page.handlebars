@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="cs_467_final_project.css" type="text/css">
+</head>
+<body>
+	<h3 class="headerClass">Employee Recognition Admin Login Page</h3>
+	{{#if error}}
+	<div class="alert alert-danger" role="alert" style="text-align: center;">
+  	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+  	<span class="sr-only">Error:</span>
+  	{{error}}
+	</div>	
+	{{/if}}
+	<div class="loginForm">
+	<form action="/login" method="post" id="adminUserLoginForm">
+		Email Address/User ID:<br>
+		<input type="text" name="username" id="username"><br><p></p>
+		Password:<br>
+		<input type="password" name="password" id="userPassword"> <br><p></p>
+		<input type="submit" value="login" id="loginForm">
+	</form><br>
+	</div>
+	<script src="ajaxFormSubmit.js"></script>	
+</body>
+</html>

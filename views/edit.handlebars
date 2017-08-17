@@ -1,0 +1,15 @@
+	<form action="/update/{{row.id}}" method="post" id="houseForm">
+		Edit Exercise Name:<br>
+		<input type="text" name="name" id="exerciseName" value={{row.name}}><br><p></p>
+		Edit Number of Reps:<br>
+		<input type="number" name="reps" id="numberOfReps" value={{row.reps}}><br><p></p>
+		Edit Weight:<br>
+		<input type="number" name="weight" id="weight" value={{row.weight}}><br><p></p>
+		Edit Date:<br>
+		<input type="date" name="date" placeholder="MM/DD/YYYY" id="date" value={{row.date}}><br><p></p>
+		Lbs
+		<input type="radio" name="lbs" id="lbs" value="true" {{#if row.lbs}} checked {{/if}}>
+		Kgs
+		<input type="radio" name="lbs" id="kgs" value="false" {{#if row.lbs}}{{else}}checked {{/if}}><br><p></p>
+		<input type="submit" value="Update Values" id="postFormSubmit">
+	</form><br>

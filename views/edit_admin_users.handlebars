@@ -1,0 +1,9 @@
+	<form action="/update_admin/{{row.email}}" method="post" id="">
+		Edit Admin Name:<br>
+		<input type="text" name="name" id="userName" value={{row.name}}><br><p></p>
+		Edit Email:<br>
+		<input type="text" name="email" id="userEmailAddress" value={{row.email}}><br><p></p>
+		Edit Password:<br> 
+		<input type="text" name="password" id="userPassword" value={{row.password}}><br><p></p>
+		<input type="submit" value="Update Values" id="postAdminFormSubmit">
+	</form><br>

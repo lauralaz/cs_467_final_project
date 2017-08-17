@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h3 class="headerClass">Employee Recognition Users</h3>
+	<div class="userDiv">
+	<table style="margin-left: auto; margin-right: auto;" id="userTable">
+		<caption>Current Users</caption>
+		<thead>
+		<tr>
+		<th>First Name<br></th>
+		<th>Last Name<br></th>
+		<th>Email Address</th>
+		<th>Photo</th>
+		<th>Security Word</th>
+		<th>Date</th>
+		<th></th>
+		<th></th>
+		</tr>
+		</thead>
+		<tbody>
+			 {{#each rows}} 
+			 <tr>
+			 	<td id="rowName"> {{user_name}}</td>
+			 	<td> {{user_last_name}}</td>
+			 	<td> {{email}}</td>
+			 	<td> {{photo}}</td>
+			 	<td> {{security_word}}</td>
+			 	<td> {{registration_time}}</td>
+			 	</td>
+			 	<td>
+			 		<form><input type="hidden" name="id" value={{email}}><button class="editButtonClass">Edit Row</button></form>
+			 	</td>
+			 	<td><form><input type="hidden" name="id" value={{email}}><button class="deleteButtonClass">Delete Row</button></form></td>	
+			 </tr>
+			 {{/each}}
+		</tbody>
+	</table> 
+</body>
+<script type="text/javascript" src="ajaxFormSubmit.js"></script>
+</html>

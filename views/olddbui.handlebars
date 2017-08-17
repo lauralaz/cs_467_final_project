@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="cs_467_final_project.css" type="text/css">
+</head>
+<body>
+	<h3 class="headerClass">Awards</h3>
+	<div class="exerciseForm">
+	<table id="exerciseTable">
+		<caption>Exercises Completed</caption>
+		<thead>
+		<tr>
+		<th>Exercise Name</th>
+		<th>Number of Reps</th>
+		<th>Weight</th>
+		<th>Date</th>
+		<th>In Lbs?</th>
+		<th></th>
+		<th></th>
+		</tr>
+		</thead>
+		<tbody>
+			 {{#each rows}} 
+			 <tr>
+			 	<td> {{name}}</td>
+			 	<td> {{reps}}</td>
+			 	<td> {{weight}}</td>
+			 	<td> {{date}}</td>
+			 	<td> {{#if lbs}}
+			 			Lbs
+			 		{{else}}
+			 			Kgs
+			 		{{/if}}
+			 	</td>
+			 	<td>
+			 		<form><input type="hidden" name="id" value={{id}}><button class="editButtonClass">Edit Row</button></form>
+			 	</td>
+			 	<td><form><input type="hidden" name="id" value={{id}}><button class="deleteButtonClass">Delete Row</button></form></td>	
+			 </tr>
+			 {{/each}}
+		</tbody>
+	</table>	
+	<form action="" method="post" id="exerciseForm">
+		Insert Exercise Name:<br>
+		<input type="text" name="name" id="exerciseName"><br><p></p>
+		Insert Number of Reps:<br>
+		<input type="number" name="Number of Reps" id="numberOfReps"><br><p></p>
+		Insert Weight:<br>
+		<input type="number" name="Weight" id="weight"><br><p></p>
+		Insert Date:<br>
+		<input type="date" name="Date" id="date" placeholder="MM/DD/YYYY"><br><p></p>
+		Lbs
+		<input type="radio" name="LbsOrKgs" id="lbs" checked>
+		Kgs
+		<input type="radio" name="LbsOrKgs" id="kgs"><br><p></p>
+		<input type="submit" value="Insert Values" id="postFormSubmit">
+	</form><br>
+	</div>
+	<script src="ajaxFormSubmit.js"></script>	
+</body>
+</html>
