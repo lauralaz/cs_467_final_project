@@ -26,7 +26,7 @@ Database::disconnect();
 		</head>
 		<body>
 			<h1>Employee Awards User Site</h1>
-			<img src="http://34.212.188.210:3000/cartoon_guy_trophy.jpg" class="img">
+			<img src="http://34.212.188.210:3004/cartoon_guy_trophy.jpg" class="img">
 			<h3 class="headerClass">User Account</h3>
 			<div>
 				<form class="userForm" method="post" action="UserNameChange.php">
@@ -117,8 +117,8 @@ Database::disconnect();
 			</div>
 			<br>
 			<div>
-				<form class="userForm" method="post" action="INSERT PAGE NAME.php">
-					<input type="submit" value="Generate Award" name="submit">
+				<form class="userForm">
+					<input type="button" value="Generate Award" onclick="window.location.href='https://evening-eyrie-73949.herokuapp.com'"/>
 				</form>
 			</div> <!-- /container -->
 			<br>

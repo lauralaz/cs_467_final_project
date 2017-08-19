@@ -8,8 +8,8 @@
 			<title>Upload Signature</title>
 		</head>
 		<body>
-			<h1>Employee Awards User Site</h1>
-			<img src="http://34.212.188.210:3000/cartoon_guy_trophy.jpg" class="img">
+			<h1>Employee Recognition User Site</h1>
+			<img src="http://34.212.188.210:3004/cartoon_guy_trophy.jpg" class="img">
 			<h3 class="headerClass">Upload Signature</h3>
 			<div>
 				<form class="userForm" method="post" action="Upload.php" enctype="multipart/form-data">
