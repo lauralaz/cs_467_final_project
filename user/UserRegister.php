@@ -9,7 +9,7 @@
 		</head>
 		<body>
 			<h1>Employee Recognition User Site</h1>
-			<img src="http://34.212.188.210:3004/cartoon_guy_trophy.jpg" class="img">
+			<img src="https://i.imgur.com/S2KpCun.jpg" class="img">
 			<h3 class="headerClass">User Registration</h3>
 			<div>
 				<form class="userForm" method="post" action="Register.php">
