@@ -1,0 +1,28 @@
+<div class='container'>
+  <div class='row'>
+
+    <h1 class='page-header'>DRACO Employee Certificate Generation</h1>
+    <table class='table table-bordered table-hover table-striped'>
+      <thead>
+        <tr>
+          <th class='text-center'>First Name</th>
+          <th class='text-center'>Last Name</th>
+          <th class='text-center'>Email</th>
+          <th class='text-center'>Send Certificate</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr ng-repeat='user in users' class='text-center'>
+          <td>{{ user.user_name }}</td>
+          <td>{{ user.user_last_name }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            <button class='btn btn-primary btn-sm'
+                    ui-sref='user({email: user.email})'>View Your Awards</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

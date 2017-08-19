@@ -1,0 +1,20 @@
+{
+  "name": "cert_gen_draco",
+  "version": "1.0.0",
+  "description": "CAPSTONE project for CS467",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "OSU",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.13.3",
+    "express": "^4.13.2",
+    "express-session": "^1.11.3",
+    "mysql": "^2.13.0",
+    "nodemailer": "^4.0.1",
+    "nodemailer-juice": "^1.0.0",
+    "request": "^2.79.0"
+  }
+}
