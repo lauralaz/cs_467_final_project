@@ -3,7 +3,14 @@ const passport = require('passport')
 var Strategy = require('passport-local').Strategy;
 var findByUsername = function(username, callback) {
   
-    pool.query("SELECT * FROM admin WHERE email = ?", [username],function(err,rows,fields) {
+
+    pool.query("SELECT * FROM regularuser WHERE UserId = ?", [username],function(err,rows,fields) {
+/*=======
+    pool.query("SELECT * FROM AdminUser WHERE UserID = ?", [username],function(err,rows,fields) {
+>>>>>>> Stashed changes*/
+  console.log("rows = "+rows);
+  console.log("error = "+ err);
+  console.log("fields ="+ fields);
     if(err)throw err;
     return callback(null, rows[0]);
   });
@@ -22,7 +29,7 @@ passport.use(new Strategy(
       if (!user) { 
         return cb(null, false); 
       }
-      if (user.password != password) { return cb(null, false); }
+      if (user.Password != password) { return cb(null, false); }
       return cb(null, user);
     });
 }));
@@ -45,7 +52,7 @@ app.use(bodyParser.json())
 app.use(passport.initialize());
 app.use(passport.session());
 var findByEmail = function(email, callback) {
-    pool.query("SELECT * FROM admin WHERE email = ?", [email],function(err,rows,fields) {
+    pool.query("SELECT * FROM regularuser WHERE UserId = ?", [email],function(err,rows,fields) {
     if(err)throw err;
     return callback(null, rows[0]);
   });
@@ -53,7 +60,7 @@ var findByEmail = function(email, callback) {
 
 passport.serializeUser(function(user, callback) {
   console.log("User is",user);
-  callback(null, user.email);
+  callback(null, user.UserId);
 });
 
 passport.deserializeUser(function(email, cb) {
@@ -98,10 +105,13 @@ function authenticationMiddleware () {
   }
 }
 
+
+//let sql = `CALL Login?)`;
+
 app.get('/home', authenticationMiddleware(), function(req,res){
   var template = {};
-  template.pageTitle = "Employee Awards Admin Site";
-  pool.query("SELECT * FROM users",function(err,rows,fields) {
+  template.pageTitle = "GTBay Admin Site";
+  pool.query("SELECT * FROM RegularUser",function(err,rows,fields) {
     if(err)throw err;
     
     template.rows = rows;
@@ -264,7 +274,7 @@ app.get('/award_types_granted', authenticationMiddleware(), function(req,res){
 app.get('/reporting', authenticationMiddleware(), function(req,res){
   var template = {};
   template.pageTitle = "Awards Granted By Type";
-  pool.query("SELECT * FROM admin",function(err,rows,fields) {
+  pool.query("SELECT * FROM adminUser",function(err,rows,fields) {
     if(err)throw err;
     // console.log(rows);
     template.rows = rows;
